@@ -13,10 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.secret_key = "secretkey"
 api = Api(app)
 
-# creates the tables. replacing create_tables.py
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 # Creates a new endpoint "/auth"
 # When calling /auth we send it with username and password which are then
